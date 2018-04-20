@@ -273,6 +273,10 @@ open class M13Checkbox: UIControl {
         }
     }
     
+    open func centerHorizontally()
+    {
+        self.controller.layoutHorizontally(frame: self.frame)
+    }
     //----------------------------
     // MARK: - State
     //----------------------------

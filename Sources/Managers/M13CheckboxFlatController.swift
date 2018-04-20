@@ -14,7 +14,7 @@
 import UIKit
 
 internal class M13CheckboxFlatController: M13CheckboxController {
-    
+    var xposition:CGFloat = 0.0
     //----------------------------
     // MARK: - Properties
     //----------------------------
@@ -31,6 +31,10 @@ internal class M13CheckboxFlatController: M13CheckboxController {
                 selectedBoxLayer.fillColor = tintColor.cgColor
             }
         }
+    }
+    override func layoutHorizontally(frame:CGRect)
+    {
+        xposition = (frame.width - (unselectedBoxLayer.path?.boundingBoxOfPath.width)!)/2 - (unselectedBoxLayer.path?.boundingBoxOfPath.width)!/2
     }
     
     override var secondaryTintColor: UIColor? {
@@ -199,9 +203,9 @@ internal class M13CheckboxFlatController: M13CheckboxController {
     
     override func layoutLayers() {
         // Frames
-        unselectedBoxLayer.frame = CGRect(x: 0.0, y: 0.0, width: pathGenerator.size, height: pathGenerator.size)
-        selectedBoxLayer.frame = CGRect(x: 0.0, y: 0.0, width: pathGenerator.size, height: pathGenerator.size)
-        markLayer.frame = CGRect(x: 0.0, y: 0.0, width: pathGenerator.size, height: pathGenerator.size)
+        unselectedBoxLayer.frame = CGRect(x: xposition, y: 0.0, width: pathGenerator.size, height: pathGenerator.size)
+        selectedBoxLayer.frame = CGRect(x: xposition, y: 0.0, width: pathGenerator.size, height: pathGenerator.size)
+        markLayer.frame = CGRect(x: xposition, y: 0.0, width: pathGenerator.size, height: pathGenerator.size)
         // Paths
         unselectedBoxLayer.path = pathGenerator.pathForBox()?.cgPath
         selectedBoxLayer.path = pathGenerator.pathForBox()?.cgPath

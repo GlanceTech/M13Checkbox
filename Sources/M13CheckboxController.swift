@@ -130,7 +130,10 @@ internal class M13CheckboxController {
             state = toState
         }
     }
-    
+    func layoutHorizontally(frame:CGRect)
+    {
+        
+    }
     //----------------------------
     // MARK: - Layout
     //----------------------------

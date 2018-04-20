@@ -34,7 +34,7 @@ internal class M13CheckboxFlatController: M13CheckboxController {
     }
     override func layoutHorizontally(frame:CGRect)
     {
-        xposition = (frame.width - (unselectedBoxLayer.path?.boundingBoxOfPath.width)!)/2 - (unselectedBoxLayer.path?.boundingBoxOfPath.width)!/2
+        xposition = (frame.width - (unselectedBoxLayer.path?.boundingBoxOfPath.width)!)/2
     }
     
     override var secondaryTintColor: UIColor? {
